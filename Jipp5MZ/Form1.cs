@@ -19,14 +19,20 @@ namespace Jipp5MZ
         public Form1()
         {
             InitializeComponent();
-            osobliwyTextBoxCola.ZaDlugiTekst += OsobliwyTextBox1_ZaDlugiTekst;
+            osobliwyTextBoxCola.ZaDlugiTekst += OsobliwyTextBox1_ZaDlugiTekst;  //dodaje metody do zdarzen kontrolki
+            osobliwyTextBoxSok.ZaDlugiTekst += OsobliwyTextBoxSok_ZaDlugiTekst;
             cola = new Cola();
             cappy = new Cappy();
         }
 
-        private void OsobliwyTextBox1_ZaDlugiTekst()
+        private void OsobliwyTextBoxSok_ZaDlugiTekst()  //implementacja tych metod przy darzeniu
         {
-            osobliwyTextBoxCola.Text = "Na pewno tyle nie wypijesz";
+            osobliwyTextBoxCola.Text = "Na pewno tyle nie wypijesz soku";
+        }
+
+        private void OsobliwyTextBox1_ZaDlugiTekst()    
+        {
+            osobliwyTextBoxCola.Text = "Na pewno tyle nie wypijesz coli";
         }
 
         private void buttonCola_Click(object sender, EventArgs e)
@@ -35,7 +41,7 @@ namespace Jipp5MZ
             {
                 double wartoscLiczbowaPola;
                 try
-                {
+                {//jest to w try catchu na wypadek gdyby ktos nie wpisal liczby ktora da sie zrzutowac do doubla np. "asd", wtedy przejdzie do catcha i pojawi sie ten komunikat
                     wartoscLiczbowaPola = Convert.ToDouble(osobliwyTextBoxCola.Text);
                     cola.Wypij(wartoscLiczbowaPola);
                 }
