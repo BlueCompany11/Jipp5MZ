@@ -21,16 +21,16 @@ namespace Jipp5MZ
             InitializeComponent();
             osobliwyTextBoxCola.ZaDlugiTekst += OsobliwyTextBox1_ZaDlugiTekst;  //dodaje metody do zdarzen kontrolki
             osobliwyTextBoxSok.ZaDlugiTekst += OsobliwyTextBoxSok_ZaDlugiTekst;
-            cola = new Cola();
+            cola = new Cola();  //tworze obiekty z komponentu JIPP5MZLib
             cappy = new Cappy();
         }
 
-        private void OsobliwyTextBoxSok_ZaDlugiTekst()  //implementacja tych metod przy darzeniu
+        private void OsobliwyTextBoxSok_ZaDlugiTekst()  //implementacja tych metod które wywołane zostaną gdy zostanie wywołane zdarzenie ZaDlugiTekst
         {
             osobliwyTextBoxCola.Text = "Na pewno tyle nie wypijesz soku";
         }
 
-        private void OsobliwyTextBox1_ZaDlugiTekst()    
+        private void OsobliwyTextBox1_ZaDlugiTekst()    //to samo
         {
             osobliwyTextBoxCola.Text = "Na pewno tyle nie wypijesz coli";
         }
@@ -52,7 +52,7 @@ namespace Jipp5MZ
 
         private void buttonSok_Click(object sender, EventArgs e)
         {
-            if (osobliwyTextBoxSok.Text != "")
+            if (osobliwyTextBoxSok.Text != "")  //to samo co wyżej
             {
                 double wartoscLiczbowaPola;
                 try
